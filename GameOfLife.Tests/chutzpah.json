@@ -1,0 +1,7 @@
+﻿{
+  "References": [
+    {
+      "Path": "../GameOfLife/GameOfLife.js"
+    }
+  ]
+}
