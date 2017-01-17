@@ -7,11 +7,8 @@
     }
 
     function CreateGenerations(genCount) {
-        for (var i = 0; i < genCount; i++) {
-            SanitizeSeed();
-            var generation = CreateGeneration(initializeGeneration());
-            seed = generation;
-        }
+        for (var i = 0; i < genCount; i++) 
+            seed = CreateGeneration(initializeGeneration());
         return generation;
     }
 
@@ -21,48 +18,7 @@
                 newGeneration[y][x] = determineLifeInNextGeneration(y, x);
         return newGeneration;
     }
-
-    function SanitizeSeed() {
-        cleanTop();
-        cleanBottom();
-        cleanLeft();
-        cleanRight();
-    }
-
-    function cleanTop() {
-        for (var i = 0; i < seed[0].length; i++)
-            if (seed[0][i] == 1) {
-                seed.unshift(new Array(seed[0].length));
-                return;
-            }
-    }
-
-    function cleanBottom() {
-        for (var i = 0; i < seed[seed.length - 1].length; i++)
-            if (seed[seed.length - 1][i] == 1) {
-                seed.push(new Array(seed[seed.length - 1].length));
-                return;
-            }
-    }
-
-    function cleanLeft() {
-        for (var y = 0; y < seed.length; y++)
-            if (seed[y][0] == 1) {
-                for (var l = 0; l < seed.length; l++)
-                    seed[l].unshift(0);
-                return;
-            }
-    }
-
-    function cleanRight() {
-        for (var y = 0; y < seed.length; y++)
-            if (seed[y][seed[y].length - 1] == 1) {
-                for (var l = 0; l < seed.length; l++) 
-                    seed[l].push(0);
-                return;
-            }
-    }
-
+    
     function initializeGeneration() {
         var generation = new Array(seed.length)
         for (var i = 0; i < seed.length; i++) 
