@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="GameOfLife">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GameOfLife</title>
+
+    <!-- Style Sheets -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="bower_components/jQuery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/knockout/dist/knockout.debug.js"></script>
+    <script type="text/javascript" src="bower_components/knockout/dist/knockout.js"></script>
+    <script type="text/javascript" src="bower_components/requirejs/require.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>]
+</head>
+<body ng-controller="AngularController as AngularVC">
+    <div class="row">
+        <div class="col-md-2 row" style="padding:12px; margin:12px;">
+            <label for="basic-url">Horizontal</label>
+            <div class="input-group">
+                <input type="text" clss="form-control" ng-model="AngularVC.Horizontal" />
+            </div>
+
+            <label for="basic-url">Vertical</label>
+            <div class="input-group">
+                <input type="text" clss="form-control" ng-model="AngularVC.Vertical" />
+            </div>
+
+            <label for="basic-url">Refresh Rate</label>
+            <div class="input-group">
+                <input type="text" clss="form-control" ng-model="AngularVC.RefreshRate" />
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" ng-cloak type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    {{AngularVC.SelectedCustomGridName}}
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li ng-repeat="(gIndex, grid) in AngularVC.CustomGrids track by $index" ng-click="AngularVC.SelectedCustomGrid(gIndex)"><a href="#">{{grid.Name}}</a></li>
+                </ul>
+            </div>
+
+            <div class="row" style="padding: 8px;">
+                <button type="button" class="btn btn-primary" ng-click="AngularVC.PlayGame()">Start</button>
+                <button type="button" class="btn btn-default" ng-click="AngularVC.StopPlaying()">Stop</button>
+                <button type="button" class="btn btn-default" ng-click="AngularVC.ClearGrid()">Reset</button>
+                <button type="button" class="btn btn-default" ng-click="AngularVC.LogGrid()">Log</button>
+            </div>
+        </div>
+        <div class="col-md-9" style="margin:12px;">
+            <table class="table" style="width:600px; height:600px;">
+                <tr ng-repeat="(rIndex, row) in AngularVC.Grid track by $index">
+                    <td ng-repeat="(cIndex,cell) in row track by $index" ng-click="AngularVC.ToggleCell(rIndex, cIndex)" ng-style="cell == 1 && {'background-color': 'black'}" style="border: 1px solid lightgray"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<!-- Application -->
+<script src="application.js"></script>
+</html>
