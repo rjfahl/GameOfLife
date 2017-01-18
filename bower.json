@@ -1,14 +1,11 @@
 {
-  "name": "test_project",
-  "description": "project for learning bootstrap, knockout.js, and jasmine.js",
+  "name": "Game of Life Kata",
+  "description": "Conway's Game of Life",
   "main": [ ],
   "dependencies": {
     "angular": "1.6.1",
-    "jQuery": "3.1.1",
-    "knockout": "3.4.1",
     "bootstrap": "3.3.7",
-    "jasmine": "2.5.2",
-    "requirejs": "2.3.2"
+    "jasmine": "2.5.2"
   },
   "authors": [
     "Robert Fahl <rfahl@apterainc.com>"

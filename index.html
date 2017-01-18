@@ -10,16 +10,12 @@
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- JavaScript -->
-    <script type="text/javascript" src="bower_components/jQuery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="bower_components/knockout/dist/knockout.debug.js"></script>
-    <script type="text/javascript" src="bower_components/knockout/dist/knockout.js"></script>
-    <script type="text/javascript" src="bower_components/requirejs/require.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>]
 </head>
 <body ng-controller="AngularController as AngularVC">
     <div class="row">
-        <div class="col-md-2 row" style="padding:12px; margin:12px;">
+        <div class="col-md-2 row" style="margin-left:12px; padding-right:0px;">
             <label for="basic-url">Horizontal</label>
             <div class="input-group">
                 <input type="text" clss="form-control" ng-model="AngularVC.Horizontal" />
@@ -52,7 +48,8 @@
                 <button type="button" class="btn btn-default" ng-click="AngularVC.LogGrid()">Log</button>
             </div>
         </div>
-        <div class="col-md-9" style="margin:12px;">
+        <div class="col-md-9">
+            <h3><span ng-cloak class="label label-success">Current Generation: {{AngularVC.CurrentGeneration}}</span></h3>
             <table class="table" style="width:600px; height:600px;">
                 <tr ng-repeat="(rIndex, row) in AngularVC.Grid track by $index">
                     <td ng-repeat="(cIndex,cell) in row track by $index" ng-click="AngularVC.ToggleCell(rIndex, cIndex)" ng-style="cell == 1 && {'background-color': 'black'}" style="border: 1px solid lightgray"></td>

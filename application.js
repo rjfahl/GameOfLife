@@ -6,6 +6,7 @@ angular.module("GameOfLife", [])
         AngularVC.Vertical = AngularVC.DefaultVertical;
         AngularVC.Horizontal = AngularVC.DefaultHorizontal;
         AngularVC.RefreshRate = 200;
+        AngularVC.CurrentGeneration = 0;
         AngularVC.IsPaused = true;
         AngularVC.Grid = new Grid(AngularVC.Vertical, AngularVC.Horizontal);
         console.log(AngularVC.Grid);
@@ -376,6 +377,7 @@ angular.module("GameOfLife", [])
 
         AngularVC.SelectedCustomGridName = "Template";
         AngularVC.SelectedCustomGrid = function (index) {
+            AngularVC.CurrentGeneration = 0;
             AngularVC.Vertical = AngularVC.CustomGrids[index].Grid.length;
             AngularVC.Horizontal = AngularVC.CustomGrids[index].Grid[0].length;
             AngularVC.SelectedCustomGridName = AngularVC.CustomGrids[index].Name;
@@ -386,6 +388,7 @@ angular.module("GameOfLife", [])
             AngularVC.Vertical = AngularVC.DefaultVertical;
             AngularVC.Horizontal = AngularVC.DefaultHorizontal;
             AngularVC.SelectedCustomGridName = "Template";
+            AngularVC.CurrentGeneration = 0;
             AngularVC.Grid = new Grid(AngularVC.Vertical, AngularVC.Horizontal);
         };
         AngularVC.PlayGame = function () {
@@ -440,6 +443,7 @@ angular.module("GameOfLife", [])
                 for (var y = 0; y < AngularVC.Grid.length; y++)
                     for (var x = 0; x < AngularVC.Grid[y].length; x++)
                         newGrid[y][x] = determineLifeInNextGeneration(y, x);
+                AngularVC.CurrentGeneration++;
                 AngularVC.Grid = newGrid;
             }
 
@@ -480,19 +484,6 @@ angular.module("GameOfLife", [])
                     bottomRight = AngularVC.Grid[y + 1][x + 1] == undefined ? 0 : AngularVC.Grid[y + 1][x + 1];
                 } catch (ex) { }
                 return topLeft + topRight + bottomLeft + bottomRight;
-            }
-
-            function Grid(vertical, horizontal) {
-                var Grid;
-                Grid = GenerateGrid(vertical, horizontal);
-                return Grid;
-
-                function GenerateGrid(vertical, horizontal) {
-                    var generation = new Array(vertical)
-                    for (var i = 0; i < vertical; i++)
-                        generation[i] = Array.apply(null, Array(5)).map(Number.prototype.valueOf, 0);
-                    return generation;
-                }
             }
         }
     }]);
