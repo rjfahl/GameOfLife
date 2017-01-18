@@ -1,12 +1,11 @@
 # Game of Life
 ### This project contains code for Conway's Game of Life code Kata.
 #### Rules of the game:
- * the Game of Life is an infinete two-dimensional grid of square cells
- * each cell can be alive or dead
- * every cell interacts with its eight neighbors either horizontally, vertically, or diagonally
- * give an initial pattern or seed for the system to run on
- * the first generation is created by applying the following rules simultaneously to every cell in the seed
-      - births and deaths occur simultaneously
+ * The Game of Life is an infinete two-dimensional grid of square cells
+      - each cell being alive or dead
+ * Every cell interacts with its eight neighbors either horizontally, vertically, or diagonally
+ * An initial pattern or seed should be given to the game
+ * The first generation is created by applying the following rules simultaneously to every cell in the seed
  *  Generation Transition Rules:
       1. Any live cell with < 2 live neighbors dies, due to underpopulation
       2. Any live cell with 2 or 3 live neighbors lives to the next generation

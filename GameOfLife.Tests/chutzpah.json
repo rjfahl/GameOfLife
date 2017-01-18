@@ -2,6 +2,12 @@
   "References": [
     {
       "Path": "../GameOfLife/GameOfLife.js"
+    },
+    {
+      "Path": "../application.js"
+    },
+    {
+      "Path": "../customGridsFactory.js"
     }
   ]
 }
