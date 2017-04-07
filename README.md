@@ -1,5 +1,5 @@
 # Game of Life
-### This project contains code for Conway's Game of Life code Kata.
+### This project contains code for Conway's Game of Life, TDD driven, code Kata.
 #### Rules of the game:
  * The Game of Life is an infinete two-dimensional grid of square cells
       - each cell being alive or dead
