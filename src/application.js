@@ -45,11 +45,10 @@ function GameOfLifeController($interval, CustomGridsFactory) {
     function PlayGame() {
         AngularVC.IsPaused = false;
         stop = $interval(function () {
-            if (!AngularVC.IsPaused) {
+            if (!AngularVC.IsPaused)
                 Play();
-            } else {
+            else
                 AngularVC.StopPlaying();
-            }
         }, AngularVC.RefreshRate);
     }
 
@@ -97,8 +96,7 @@ function GameOfLifeController($interval, CustomGridsFactory) {
                 return 1;
             else if (AngularVC.Grid[y][x] == 1)
                 return total < 2 || total > 3 ? 0 : 1;
-            else
-                return 0;
+            return 0;
         }
 
         function findLivingHorizontalNeighbors(y, x) {
@@ -131,4 +129,3 @@ function GameOfLifeController($interval, CustomGridsFactory) {
         }
     }
 }
-

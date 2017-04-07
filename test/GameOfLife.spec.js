@@ -1,19 +1,4 @@
-﻿/*
- * Rules of the game;
- *   o the Game of Life is an infinete two-dimensional grid of square cells
- *   o each cell can be alive or dead
- *   o every cell interacts with its eight neighbors either horizontally, vertically, or diagonally
- *   o Generation Transition Rules:
- *     1. Any live cell with < 2 live neighbors dies, due to underpopulation
- *     2. Any live cell with 2 or 3 live neighbors lives to the next generation
- *     3. Any live cell with > 3 live neighbors dies, due to overpopulation
- *     4. Any dead cell with exactly three live neighbors becomes a live cell, due to reproduction
- *   o give an initial pattern or seed for the system to run on
- *   o the first generation is created by applying the above rules simultaneously to every cell in the seed
- *     - births and deaths occur simultaneously
- */
-
-describe("Game Of Life", function () {
+﻿describe("Game Of Life", function () {
     var gameOfLife;
 
     beforeEach(function () {

@@ -16,8 +16,7 @@
 
     <!-- Application -->
     <script src="application.js"></script>
-    <script type="text/javascript" src="customGridsFactory.js"></script>
-
+    <script type="text/javascript" src="factories/customGridsFactory.js"></script>
 </head>
 <body ng-controller="GameOfLifeController as GameOfLifeVC">
     <div class="row">
@@ -26,17 +25,14 @@
             <div class="input-group">
                 <input type="text" clss="form-control" ng-model="GameOfLifeVC.Horizontal" />
             </div>
-
             <label for="basic-url">Vertical</label>
             <div class="input-group">
                 <input type="text" clss="form-control" ng-model="GameOfLifeVC.Vertical" />
             </div>
-
             <label for="basic-url">Refresh Rate</label>
             <div class="input-group">
                 <input type="text" clss="form-control" ng-model="GameOfLifeVC.RefreshRate" />
             </div>
-
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" ng-cloak type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     {{GameOfLifeVC.SelectedCustomGridName}}
@@ -46,7 +42,6 @@
                     <li ng-repeat="(gIndex, grid) in GameOfLifeVC.CustomGrids track by $index" ng-click="GameOfLifeVC.SelectedCustomGrid(gIndex)"><a href="#">{{grid.Name}}</a></li>
                 </ul>
             </div>
-
             <div class="row" style="padding: 8px;">
                 <button type="button" class="btn btn-primary" ng-click="GameOfLifeVC.PlayGame()">Start</button>
                 <button type="button" class="btn btn-default" ng-click="GameOfLifeVC.StopPlaying()">Stop</button>

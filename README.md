@@ -19,7 +19,6 @@
 ## Resources
 * Angular
 * Jasmine
-* Chutzpah
 * Bootstrap
 
 ---
