@@ -6,7 +6,6 @@
     "angular": "1.6.1",
     "bootstrap": "3.3.7",
     "jasmine": "2.5.2",
-    "jQuery": "3.1.1"
   },
   "authors": [
     "Robert Fahl <rfahl@apterainc.com>"
