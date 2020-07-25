@@ -1,5 +1,10 @@
 # Game of Life
 ### This project contains code for Conway's Game of Life, TDD driven, code Kata.
+---
+
+### [Play The Game of Life](https://rjfahl.github.io/game-of-life/src/index.html#)
+
+---
 #### Rules of the game:
  * The Game of Life is an infinete two-dimensional grid of square cells
       - each cell being alive or dead
